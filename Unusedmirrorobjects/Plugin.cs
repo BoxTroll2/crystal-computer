@@ -1,4 +1,4 @@
-﻿using BepInEx;
+using BepInEx;
 using System;
 using UnityEngine;
 using TMPro;
@@ -17,10 +17,10 @@ namespace Cristalcomputer
 
         void Start()
         {
-            Utilla.Events.GameInitialized += OnGameInitialized;
+            GorillaTagger.OnPlayerSpawned(Initialized);
         }
 
-        void OnGameInitialized(object sender, EventArgs e)
+        void Initialized()
         {
             GameObject cristal = GameObject.Find("Environment Objects/LocalObjects_Prefab/ForestToCave/C_Crystal_Chunk");
             if (cristal != null)
